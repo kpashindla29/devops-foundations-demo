@@ -66,7 +66,7 @@ pipeline {
 
       stage('deploy app') {
           steps {
-             sh script: 'kill $(lsof -t -i:8085)'
+             sh script: 'kill -9 $(lsof -t -i:8085)'
              sh script: 'docker run -d -p 8085:8085 kpashindla/devops-foundations-demo:$BUILD_NUMBER'
             }
       }
