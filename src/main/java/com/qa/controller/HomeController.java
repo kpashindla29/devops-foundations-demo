@@ -8,7 +8,7 @@ public class HomeController {
 
     @GetMapping("/")
     public String home() {
-        return "Welcome to Spring Boot Application";
+        return "Welcome to DevOps Foundations!!";
     }
 
 }
