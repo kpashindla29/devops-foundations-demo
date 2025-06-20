@@ -66,7 +66,7 @@ pipeline {
 
       stage('deploy app') {
           steps {
-             sh script: "docker stop $(docker ps | grep ':8085' | awk '{print $1}')"
+             sh script: 'docker stop $(docker ps | grep ":8085" | awk \'{print $1}\') || true'
              sh script: 'docker run -d -p 8085:8085 kpashindla/devops-foundations-demo:$BUILD_NUMBER'
             }
       }
