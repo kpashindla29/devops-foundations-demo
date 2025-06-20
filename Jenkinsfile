@@ -64,6 +64,12 @@ pipeline {
 		    }
       }
 
+      stage('deploy app') {
+          steps {
+             sh script: 'docker run -d -p 8085:8085 kpashindla/devops-foundations-demo:$BUILD_NUMBER'
+            }
+      }
+
       /*
       stage('deploy-QA') {
 	         steps {
