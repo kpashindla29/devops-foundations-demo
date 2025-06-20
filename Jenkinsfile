@@ -63,11 +63,7 @@ pipeline {
 		        sh script: 'docker push docker.io/kpashindla/devops-foundations-demo:$BUILD_NUMBER'
 		    }
       }
-       stage('deploy app') {
-      	      steps {
-                   sh script: 'docker service create --name mysvc --replicas 2 -p 8085:8085 kpashindla/devops-foundations-demo:$BUILD_NUMBER'
-      		    }
-       }
+
       /*
       stage('deploy-QA') {
 	         steps {
